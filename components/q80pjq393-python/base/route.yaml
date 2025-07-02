@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: q80pjq393-python
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: q80pjq393-python 
+  name: q80pjq393-python
+spec:
+  port:
+    targetPort: 8081 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: q80pjq393-python
+    weight: 100 
